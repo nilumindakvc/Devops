@@ -194,7 +194,10 @@ resource "aws_security_group" "web_server" {
 }
 
 # Create EC2 instance - Ubuntu Free Tier (t2.micro)
+# Only create if no existing instances are running
 resource "aws_instance" "web_server" {
+  count = local.skip_creation ? 0 : 1
+  
   ami                     = data.aws_ami.ubuntu.id
   instance_type           = var.instance_type  # t2.micro (1GB RAM - Free tier)
   key_name                = aws_key_pair.devops_key.key_name
@@ -214,32 +217,32 @@ resource "aws_instance" "web_server" {
 # Outputs
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = aws_instance.web_server.id
+  value       = local.skip_creation ? data.aws_instance.existing_instance[0].id : aws_instance.web_server[0].id
 }
 
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
-  value       = aws_instance.web_server.public_ip
+  value       = local.skip_creation ? data.aws_instance.existing_instance[0].public_ip : aws_instance.web_server[0].public_ip
 }
 
 output "instance_public_dns" {
   description = "Public DNS name of the EC2 instance"
-  value       = aws_instance.web_server.public_dns
+  value       = local.skip_creation ? data.aws_instance.existing_instance[0].public_dns : aws_instance.web_server[0].public_dns
 }
 
 output "ssh_connection_command" {
   description = "SSH command to connect to the instance"
-  value       = "ssh -i ${var.key_pair_name}.pem ubuntu@${aws_instance.web_server.public_ip}"
+  value       = "ssh -i ${var.key_pair_name}.pem ubuntu@${local.skip_creation ? data.aws_instance.existing_instance[0].public_ip : aws_instance.web_server[0].public_ip}"
 }
 
 # Generate Ansible inventory file automatically
 resource "local_file" "ansible_inventory" {
   content = templatefile("../../automation/ansible/inventory/inventory.ini.tpl", {
-    ec2_public_ip = aws_instance.web_server.public_ip
+    ec2_public_ip = local.skip_creation ? data.aws_instance.existing_instance[0].public_ip : aws_instance.web_server[0].public_ip
     ssh_key_path  = "${path.root}/../../ssh-keys/${var.key_pair_name}.pem"
   })
   filename = "../../automation/ansible/inventory/inventory.ini"
 
-  depends_on = [aws_instance.web_server, local_file.private_key]
+  depends_on = [local_file.private_key]
 }
 

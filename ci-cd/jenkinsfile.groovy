@@ -7,6 +7,9 @@ pipeline {
         GIT_REPO = "https://github.com/nilumindakvc/Devops.git"
         AWS_REGION = "ap-south-1"
         EC2_USER = "ubuntu"
+        PROJECT_NAME = "devops-final-project"
+        SKIP_INFRASTRUCTURE = "false"
+        SKIP_ANSIBLE = "false"
     }
 
     stages {
@@ -16,10 +19,57 @@ pipeline {
             }
         }
 
-        stage('Provision Infrastructure') {
+        stage('Check Existing Infrastructure') {
             steps {
                 script {
                     sh '''
+                        echo "Checking for existing EC2 instances..."
+                        
+                        # Check if there are running EC2 instances with our project tag
+                        RUNNING_INSTANCES=$(aws ec2 describe-instances \
+                            --region ${AWS_REGION} \
+                            --filters "Name=instance-state-name,Values=running" "Name=tag:Project,Values=${PROJECT_NAME}" \
+                            --query 'Reservations[*].Instances[*].InstanceId' \
+                            --output text)
+                        
+                        if [ ! -z "$RUNNING_INSTANCES" ] && [ "$RUNNING_INSTANCES" != "" ]; then
+                            echo "Found running EC2 instances: $RUNNING_INSTANCES"
+                            echo "SKIP_INFRASTRUCTURE=true" > infrastructure_check.env
+                            echo "SKIP_ANSIBLE=true" >> infrastructure_check.env
+                            
+                            # Get the IP of the first running instance for deployment
+                            EXISTING_IP=$(aws ec2 describe-instances \
+                                --region ${AWS_REGION} \
+                                --instance-ids $(echo $RUNNING_INSTANCES | awk '{print $1}') \
+                                --query 'Reservations[*].Instances[*].PublicIpAddress' \
+                                --output text)
+                            
+                            echo "EC2_IP=$EXISTING_IP" > ec2_info.env
+                            echo "Using existing EC2 instance with IP: $EXISTING_IP"
+                            echo "Infrastructure creation and Ansible configuration will be skipped."
+                        else
+                            echo "No running EC2 instances found. Infrastructure will be created."
+                            echo "SKIP_INFRASTRUCTURE=false" > infrastructure_check.env
+                            echo "SKIP_ANSIBLE=false" >> infrastructure_check.env
+                        fi
+                        
+                        cat infrastructure_check.env
+                    '''
+                }
+            }
+        }
+
+        stage('Provision Infrastructure') {
+            when {
+                script {
+                    def props = readProperties file: 'infrastructure_check.env'
+                    return props.SKIP_INFRASTRUCTURE != 'true'
+                }
+            }
+            steps {
+                script {
+                    sh '''
+                        echo "Creating new infrastructure..."
                         cd infrastructure/terraform
                         
                         terraform init
@@ -36,9 +86,16 @@ pipeline {
         }
 
         stage('Configure Server with Ansible') {
+            when {
+                script {
+                    def props = readProperties file: 'infrastructure_check.env'
+                    return props.SKIP_ANSIBLE != 'true'
+                }
+            }
             steps {
                 script {
                     sh '''
+                        echo "Configuring server with Ansible..."
                         # Wait for EC2 to be ready (SSH)
                         echo "Waiting for EC2 instance to be ready..."
                         sleep 60
@@ -47,6 +104,34 @@ pipeline {
                         # Run Ansible playbook
                         cd automation/ansible
                         ansible-playbook playbooks/configure-ec2.yml
+                    '''
+                }
+            }
+        }
+
+        stage('Infrastructure Status') {
+            steps {
+                script {
+                    sh '''
+                        if [ -f infrastructure_check.env ]; then
+                            source infrastructure_check.env
+                            source ec2_info.env
+                            
+                            echo "=== INFRASTRUCTURE STATUS ==="
+                            if [ "$SKIP_INFRASTRUCTURE" = "true" ]; then
+                                echo "✅ Used existing EC2 instance: $EC2_IP"
+                                echo "⏭️  Skipped infrastructure creation"
+                            else
+                                echo "🆕 Created new infrastructure with EC2: $EC2_IP"
+                            fi
+                            
+                            if [ "$SKIP_ANSIBLE" = "true" ]; then
+                                echo "⏭️  Skipped Ansible configuration (using existing setup)"
+                            else
+                                echo "⚙️  Configured server with Ansible"
+                            fi
+                            echo "=============================="
+                        fi
                     '''
                 }
             }
