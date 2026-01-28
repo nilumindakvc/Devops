@@ -141,17 +141,24 @@ pipeline {
                         echo "Installing Ansible..."
                         # Install Ansible if not already installed
                         if ! command -v ansible-playbook &> /dev/null; then
-                            echo "Ansible not found. Installing via pip..."
-                            # Install pip if not available
-                            if ! command -v pip3 &> /dev/null; then
-                                echo "Installing pip3..."
-                                wget https://bootstrap.pypa.io/get-pip.py
-                                python3 get-pip.py --user
-                                export PATH="$HOME/.local/bin:$PATH"
-                            fi
-                            # Install Ansible using pip (user install)
-                            pip3 install --user ansible
-                            export PATH="$HOME/.local/bin:$PATH"
+                            echo "Ansible not found. Installing via virtual environment..."
+                            
+                            # Create virtual environment for Ansible
+                            python3 -m venv ansible-venv
+                            source ansible-venv/bin/activate
+                            
+                            # Install Ansible in virtual environment
+                            pip install ansible
+                            
+                            # Create wrapper script for ansible-playbook
+                            echo '#!/bin/bash' > ansible-playbook-wrapper
+                            echo 'cd /var/lib/jenkins/workspace/devops_pipline' >> ansible-playbook-wrapper
+                            echo 'source ansible-venv/bin/activate' >> ansible-playbook-wrapper
+                            echo 'ansible-playbook "$@"' >> ansible-playbook-wrapper
+                            chmod +x ansible-playbook-wrapper
+                            
+                            # Add to PATH
+                            export PATH="/var/lib/jenkins/workspace/devops_pipline:$PATH"
                         else
                             echo "Ansible is already installed"
                             ansible --version
@@ -165,8 +172,8 @@ pipeline {
                         # Terraform has already generated the inventory file with actual IP
                         # Run Ansible playbook
                         cd automation/ansible
-                        export PATH="$HOME/.local/bin:$PATH"
-                        ansible-playbook playbooks/configure-ec2.yml
+                        export PATH="/var/lib/jenkins/workspace/devops_pipline:$PATH"
+                        ansible-playbook-wrapper playbooks/configure-ec2.yml
                     '''
                 }
             }
