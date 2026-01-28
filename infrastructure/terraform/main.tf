@@ -65,7 +65,26 @@ variable "project_name" {
   default     = "devops-final-project"
 }
 
-# Data source to get the latest Ubuntu AMI - try multiple versions for better compatibility
+# AMI ID mapping for different regions as fallback
+variable "ami_id" {
+  description = "AMI ID to use (leave empty for automatic lookup)"
+  type        = string
+  default     = ""
+}
+
+locals {
+  # Fallback AMI IDs for different regions (Ubuntu 22.04 LTS)
+  region_amis = {
+    "eu-north-1" = "ami-0014ce3e52359afbd"  # Ubuntu 22.04 LTS
+    "us-east-1"  = "ami-0e001c9271cf7f3b9"  # Ubuntu 22.04 LTS  
+    "us-west-2"  = "ami-0efcece6bed30fd98"  # Ubuntu 22.04 LTS
+    "eu-west-1"  = "ami-01dd271720c1ba44f"  # Ubuntu 22.04 LTS
+  }
+  
+  use_fallback_ami = var.ami_id != "" ? var.ami_id : lookup(local.region_amis, var.aws_region, "")
+}
+
+# Data source to get the latest Ubuntu AMI - with fallback for eu-north-1
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"] # Canonical
@@ -73,9 +92,7 @@ data "aws_ami" "ubuntu" {
   filter {
     name   = "name"
     values = [
-      "ubuntu/images/hvm-ssd/ubuntu-24.04-amd64-server-*",
-      "ubuntu/images/hvm-ssd/ubuntu-22.04-amd64-server-*", 
-      "ubuntu/images/hvm-ssd/ubuntu-20.04-amd64-server-*"
+      "ubuntu/images/hvm-ssd/ubuntu-*-amd64-server-*"
     ]
   }
 
@@ -87,6 +104,11 @@ data "aws_ami" "ubuntu" {
   filter {
     name   = "state"
     values = ["available"]
+  }
+  
+  filter {
+    name   = "architecture"  
+    values = ["x86_64"]
   }
 }
 
@@ -207,7 +229,7 @@ resource "aws_security_group" "web_server" {
 resource "aws_instance" "web_server" {
   count = local.skip_creation ? 0 : 1
   
-  ami                     = data.aws_ami.ubuntu.id
+  ami                     = local.use_fallback_ami != "" ? local.use_fallback_ami : data.aws_ami.ubuntu.id
   instance_type           = var.instance_type  # t2.micro (1GB RAM - Free tier)
   key_name                = aws_key_pair.devops_key.key_name
   vpc_security_group_ids  = [aws_security_group.web_server.id]
