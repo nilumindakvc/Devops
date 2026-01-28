@@ -143,8 +143,16 @@ pipeline {
                         if ! command -v ansible-playbook &> /dev/null; then
                             echo "Ansible not found. Installing via pip with --break-system-packages..."
                             
-                            # Install Ansible directly with --break-system-packages (safe for isolated environments)
-                            pip3 install --break-system-packages ansible
+                            # Install pip3 if not available
+                            if ! command -v pip3 &> /dev/null; then
+                                echo "Installing pip3..."
+                                wget -q https://bootstrap.pypa.io/get-pip.py
+                                python3 get-pip.py --user --break-system-packages
+                                export PATH="$HOME/.local/bin:$PATH"
+                            fi
+                            
+                            # Install Ansible using pip3
+                            $HOME/.local/bin/pip3 install --break-system-packages ansible || pip3 install --break-system-packages ansible
                             
                             # Add local bin to PATH
                             export PATH="$HOME/.local/bin:$PATH"
