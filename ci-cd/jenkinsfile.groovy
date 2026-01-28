@@ -25,14 +25,38 @@ pipeline {
                     sh '''
                         echo "Checking for existing EC2 instances..."
                         
+                        # Initialize default values
+                        echo "SKIP_INFRASTRUCTURE=false" > infrastructure_check.env
+                        echo "SKIP_ANSIBLE=false" >> infrastructure_check.env
+                        
+                        # Check if AWS credentials are available
+                        if ! aws sts get-caller-identity > /dev/null 2>&1; then
+                            echo "⚠️  WARNING: AWS credentials not configured in Jenkins!"
+                            echo ""
+                            echo "AWS CLI authentication failed. To fix this:"
+                            echo "1. Configure AWS credentials in Jenkins:"
+                            echo "   - Go to Jenkins → Manage Jenkins → Credentials"
+                            echo "   - Add AWS Access Key ID and Secret Access Key"
+                            echo "   - Or configure IAM role for Jenkins EC2 instance"
+                            echo "2. Or install AWS CLI plugin in Jenkins"
+                            echo ""
+                            echo "🚀 For now, proceeding with infrastructure creation..."
+                            echo "💡 TIP: Configure AWS credentials to enable infrastructure detection"
+                            echo ""
+                            cat infrastructure_check.env
+                            exit 0
+                        fi
+                        
+                        echo "✅ AWS credentials verified. Checking for existing instances..."
+                        
                         # Check if there are running EC2 instances with our project tag
                         RUNNING_INSTANCES=$(aws ec2 describe-instances \
                             --region ${AWS_REGION} \
                             --filters "Name=instance-state-name,Values=running" "Name=tag:Project,Values=${PROJECT_NAME}" \
                             --query 'Reservations[*].Instances[*].InstanceId' \
-                            --output text)
+                            --output text 2>/dev/null || echo "")
                         
-                        if [ ! -z "$RUNNING_INSTANCES" ] && [ "$RUNNING_INSTANCES" != "" ]; then
+                        if [ ! -z "$RUNNING_INSTANCES" ] && [ "$RUNNING_INSTANCES" != "" ] && [ "$RUNNING_INSTANCES" != "None" ]; then
                             echo "Found running EC2 instances: $RUNNING_INSTANCES"
                             echo "SKIP_INFRASTRUCTURE=true" > infrastructure_check.env
                             echo "SKIP_ANSIBLE=true" >> infrastructure_check.env
@@ -42,18 +66,27 @@ pipeline {
                                 --region ${AWS_REGION} \
                                 --instance-ids $(echo $RUNNING_INSTANCES | awk '{print $1}') \
                                 --query 'Reservations[*].Instances[*].PublicIpAddress' \
-                                --output text)
+                                --output text 2>/dev/null || echo "")
                             
-                            echo "EC2_IP=$EXISTING_IP" > ec2_info.env
-                            echo "Using existing EC2 instance with IP: $EXISTING_IP"
-                            echo "Infrastructure creation and Ansible configuration will be skipped."
+                            if [ ! -z "$EXISTING_IP" ] && [ "$EXISTING_IP" != "" ] && [ "$EXISTING_IP" != "None" ]; then
+                                echo "EC2_IP=$EXISTING_IP" > ec2_info.env
+                                echo "✅ Using existing EC2 instance with IP: $EXISTING_IP"
+                                echo "⏭️  Infrastructure creation and Ansible configuration will be skipped."
+                            else
+                                echo "⚠️  Could not retrieve IP for existing instance. Will create new infrastructure."
+                                echo "SKIP_INFRASTRUCTURE=false" > infrastructure_check.env
+                                echo "SKIP_ANSIBLE=false" >> infrastructure_check.env
+                            fi
                         else
                             echo "No running EC2 instances found. Infrastructure will be created."
                             echo "SKIP_INFRASTRUCTURE=false" > infrastructure_check.env
                             echo "SKIP_ANSIBLE=false" >> infrastructure_check.env
                         fi
                         
+                        echo ""
+                        echo "=== Infrastructure Check Results ==="
                         cat infrastructure_check.env
+                        echo "==================================="
                     '''
                 }
             }
