@@ -48,10 +48,20 @@ variable "aws_region" {
 }
 
 variable "instance_type" {
-  description = "EC2 instance type - t2.micro is free tier eligible with 1GB RAM"
+  description = "EC2 instance type - varies by region for free tier eligibility"
   type        = string
-  default     = "t2.micro"  # 1GB RAM - Free tier (not 2GB as required)
+  default     = "t3.micro"  # Default for eu-north-1
 }
+
+# Local values for region-specific configurations
+locals {
+  instance_type_map = {
+    "eu-north-1" = "t3.micro"   # Stockholm - Free tier eligible
+    "us-east-1"  = "t2.micro"   # Virginia - Free tier eligible
+    "eu-west-1"  = "t2.micro"   # Ireland - Free tier eligible
+  }
+  
+  actual_instance_type = contains(keys(local.instance_type_map), var.aws_region) ? local.instance_type_map[var.aws_region] : var.instance_type
 
 variable "key_pair_name" {
   description = "Name of the AWS key pair"
@@ -217,16 +227,16 @@ resource "aws_instance" "web_server" {
   count = local.skip_creation ? 0 : 1
   
   ami                     = contains(keys(local.ubuntu_ami_id), var.aws_region) ? local.ubuntu_ami_id[var.aws_region] : data.aws_ami.ubuntu[0].id
-  instance_type           = var.instance_type  # t2.micro (1GB RAM - Free tier)
+  instance_type           = local.actual_instance_type  # Region-specific free tier instance
   key_name                = aws_key_pair.devops_key.key_name
   vpc_security_group_ids  = [aws_security_group.web_server.id]
   subnet_id               = aws_subnet.public.id
   disable_api_termination = false
 
   tags = {
-    Name    = "${var.project_name}-amazon-linux-server"
+    Name    = "${var.project_name}-ubuntu-server"
     Project = var.project_name
-    OS      = "Amazon Linux 2"
+    OS      = "Ubuntu 22.04 LTS"
     RAM     = "1GB"
     Tier    = "Free Tier Eligible"
   }
