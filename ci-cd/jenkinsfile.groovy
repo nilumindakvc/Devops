@@ -157,14 +157,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        echo "Current directory: $(pwd)"
-                        echo "Files in directory: $(ls -la)"
-                        
                         if [ -f infrastructure_check.env ]; then
-                            echo "Found infrastructure_check.env file"
                             . ./infrastructure_check.env
                             if [ -f ec2_info.env ]; then
-                                echo "Found ec2_info.env file"
                                 . ./ec2_info.env
                             fi
                             
@@ -184,8 +179,6 @@ pipeline {
                             echo "=============================="
                         else
                             echo "❌ infrastructure_check.env file not found"
-                            echo "Available files:"
-                            ls -la | grep ".env" || echo "No .env files found"
                         fi
                     '''
                 }
@@ -228,7 +221,7 @@ pipeline {
                 script {
                     sh '''
                         # Load EC2 IP
-                        source ec2_info.env
+                        . ec2_info.env
                         
                         # SSH to EC2 and deploy with individual Docker commands
                         ssh -i ssh-keys/my-key-pair.pem -o StrictHostKeyChecking=no ${EC2_USER}@$EC2_IP << ENDSSH
@@ -293,7 +286,7 @@ ENDSSH
         success {
             script {
                 sh '''
-                    source ec2_info.env
+                    . ec2_info.env
                     echo "Deployment Successful!"
                     echo "Frontend URL: http://$EC2_IP:3000"
                    
