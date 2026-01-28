@@ -59,7 +59,6 @@ pipeline {
                         if [ ! -z "$RUNNING_INSTANCES" ] && [ "$RUNNING_INSTANCES" != "" ] && [ "$RUNNING_INSTANCES" != "None" ]; then
                             echo "Found running EC2 instances: $RUNNING_INSTANCES"
                             echo "SKIP_INFRASTRUCTURE=true" > infrastructure_check.env
-                            echo "SKIP_ANSIBLE=true" >> infrastructure_check.env
                             
                             # Get the IP of the first running instance for deployment
                             EXISTING_IP=$(aws ec2 describe-instances \
@@ -132,7 +131,7 @@ pipeline {
         stage('Configure Server with Ansible') {
             when {
                 expression {
-                    def skipAnsible = sh(returnStdout: true, script: 'grep "SKIP_ANSIBLE=true" infrastructure_check.env || echo "not_found"').trim()
+                    def skipAnsible = sh(returnStdout: true, script: 'tail -n 1 infrastructure_check.env | grep "SKIP_ANSIBLE=true" || echo "not_found"').trim()
                     return skipAnsible == 'not_found'
                 }
             }
