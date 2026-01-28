@@ -158,8 +158,10 @@ pipeline {
                 script {
                     sh '''
                         if [ -f infrastructure_check.env ]; then
-                            source infrastructure_check.env
-                            source ec2_info.env
+                            . infrastructure_check.env
+                            if [ -f ec2_info.env ]; then
+                                . ec2_info.env
+                            fi
                             
                             echo "=== INFRASTRUCTURE STATUS ==="
                             if [ "$SKIP_INFRASTRUCTURE" = "true" ]; then
