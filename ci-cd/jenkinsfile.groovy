@@ -141,9 +141,17 @@ pipeline {
                         echo "Installing Ansible..."
                         # Install Ansible if not already installed
                         if ! command -v ansible-playbook &> /dev/null; then
-                            echo "Ansible not found. Installing..."
-                            sudo apt update
-                            sudo apt install -y ansible
+                            echo "Ansible not found. Installing via pip..."
+                            # Install pip if not available
+                            if ! command -v pip3 &> /dev/null; then
+                                echo "Installing pip3..."
+                                wget https://bootstrap.pypa.io/get-pip.py
+                                python3 get-pip.py --user
+                                export PATH="$HOME/.local/bin:$PATH"
+                            fi
+                            # Install Ansible using pip (user install)
+                            pip3 install --user ansible
+                            export PATH="$HOME/.local/bin:$PATH"
                         else
                             echo "Ansible is already installed"
                             ansible --version
@@ -157,6 +165,7 @@ pipeline {
                         # Terraform has already generated the inventory file with actual IP
                         # Run Ansible playbook
                         cd automation/ansible
+                        export PATH="$HOME/.local/bin:$PATH"
                         ansible-playbook playbooks/configure-ec2.yml
                     '''
                 }
