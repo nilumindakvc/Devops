@@ -5,7 +5,7 @@ pipeline {
         FRONTEND_IMAGE = "kvcn/agents_frontend"
         BACKEND_IMAGE = "kvcn/agents_backend"
         GIT_REPO = "https://github.com/nilumindakvc/Devops.git"
-        AWS_REGION = "ap-south-1"
+        AWS_REGION = "eu-north-1"
         EC2_USER = "ubuntu"
         PROJECT_NAME = "devops-final-project"
         SKIP_INFRASTRUCTURE = "false"

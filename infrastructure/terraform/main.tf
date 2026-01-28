@@ -44,7 +44,7 @@ resource "local_file" "private_key" {
 variable "aws_region" {
   description = "AWS region"
   type        = string
-  default     = "ap-south-1"  # Mumbai region
+  default     = "eu-north-1"  # Stockholm region
 }
 
 variable "instance_type" {
@@ -107,7 +107,7 @@ resource "aws_internet_gateway" "main" {
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "${var.aws_region}a"  # ap-south-1a
+  availability_zone       = "${var.aws_region}a"  # eu-north-1a
   map_public_ip_on_launch = true
 
   tags = {
