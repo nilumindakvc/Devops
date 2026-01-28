@@ -61,7 +61,7 @@ pipeline {
 
         stage('Provision Infrastructure') {
             when {
-                script {
+                expression {
                     def props = readProperties file: 'infrastructure_check.env'
                     return props.SKIP_INFRASTRUCTURE != 'true'
                 }
@@ -87,7 +87,7 @@ pipeline {
 
         stage('Configure Server with Ansible') {
             when {
-                script {
+                expression {
                     def props = readProperties file: 'infrastructure_check.env'
                     return props.SKIP_ANSIBLE != 'true'
                 }
