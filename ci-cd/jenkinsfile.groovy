@@ -185,7 +185,7 @@ pipeline {
                         else
                             echo "❌ infrastructure_check.env file not found"
                             echo "Available files:"
-                            ls -la | grep "\.env"
+                            ls -la | grep ".env" || echo "No .env files found"
                         fi
                     '''
                 }
