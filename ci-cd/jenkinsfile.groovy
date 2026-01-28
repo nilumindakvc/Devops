@@ -141,24 +141,13 @@ pipeline {
                         echo "Installing Ansible..."
                         # Install Ansible if not already installed
                         if ! command -v ansible-playbook &> /dev/null; then
-                            echo "Ansible not found. Installing via virtual environment..."
+                            echo "Ansible not found. Installing via pip with --break-system-packages..."
                             
-                            # Create virtual environment for Ansible
-                            python3 -m venv ansible-venv
-                            source ansible-venv/bin/activate
+                            # Install Ansible directly with --break-system-packages (safe for isolated environments)
+                            pip3 install --break-system-packages ansible
                             
-                            # Install Ansible in virtual environment
-                            pip install ansible
-                            
-                            # Create wrapper script for ansible-playbook
-                            echo '#!/bin/bash' > ansible-playbook-wrapper
-                            echo 'cd /var/lib/jenkins/workspace/devops_pipline' >> ansible-playbook-wrapper
-                            echo 'source ansible-venv/bin/activate' >> ansible-playbook-wrapper
-                            echo 'ansible-playbook "$@"' >> ansible-playbook-wrapper
-                            chmod +x ansible-playbook-wrapper
-                            
-                            # Add to PATH
-                            export PATH="/var/lib/jenkins/workspace/devops_pipline:$PATH"
+                            # Add local bin to PATH
+                            export PATH="$HOME/.local/bin:$PATH"
                         else
                             echo "Ansible is already installed"
                             ansible --version
@@ -172,8 +161,8 @@ pipeline {
                         # Terraform has already generated the inventory file with actual IP
                         # Run Ansible playbook
                         cd automation/ansible
-                        export PATH="/var/lib/jenkins/workspace/devops_pipline:$PATH"
-                        ansible-playbook-wrapper playbooks/configure-ec2.yml
+                        export PATH="$HOME/.local/bin:$PATH"
+                        ansible-playbook playbooks/configure-ec2.yml
                     '''
                 }
             }
