@@ -171,7 +171,7 @@ pipeline {
                         echo "Creating inventory file from template..."
                         cd automation/ansible
                         EC2_IP=$(grep 'EC2_IP=' ../../infrastructure_check.env | cut -d'=' -f2)
-                        sed "s/\${ec2_public_ip}/$EC2_IP/g; s|\${ssh_key_path}|../../ssh-keys/my-key-pair.pem|g" inventory/inventory.ini.tpl > inventory/inventory.ini
+                        sed "s/\\\${ec2_public_ip}/\$EC2_IP/g; s|\\\${ssh_key_path}|../../ssh-keys/my-key-pair.pem|g" inventory/inventory.ini.tpl > inventory/inventory.ini
                         
                         echo "Generated inventory file:"
                         cat inventory/inventory.ini
