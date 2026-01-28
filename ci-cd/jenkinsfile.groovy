@@ -128,6 +128,17 @@ pipeline {
             steps {
                 script {
                     sh '''
+                        echo "Installing Ansible..."
+                        # Install Ansible if not already installed
+                        if ! command -v ansible-playbook &> /dev/null; then
+                            echo "Ansible not found. Installing..."
+                            sudo apt update
+                            sudo apt install -y ansible
+                        else
+                            echo "Ansible is already installed"
+                            ansible --version
+                        fi
+                        
                         echo "Configuring server with Ansible..."
                         # Wait for EC2 to be ready (SSH)
                         echo "Waiting for EC2 instance to be ready..."
