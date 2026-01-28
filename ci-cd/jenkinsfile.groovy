@@ -71,7 +71,18 @@ pipeline {
                             if [ ! -z "$EXISTING_IP" ] && [ "$EXISTING_IP" != "" ] && [ "$EXISTING_IP" != "None" ]; then
                                 echo "EC2_IP=$EXISTING_IP" > ec2_info.env
                                 echo "✅ Using existing EC2 instance with IP: $EXISTING_IP"
-                                echo "⏭️  Infrastructure creation and Ansible configuration will be skipped."
+                                
+                                # Check if Docker is installed on the existing instance
+                                echo "🔍 Checking if Docker is installed on existing instance..."
+                                if ssh -i ssh-keys/my-key-pair.pem -o StrictHostKeyChecking=no -o ConnectTimeout=10 ${EC2_USER}@$EXISTING_IP "docker --version" >/dev/null 2>&1; then
+                                    echo "✅ Docker is installed. Skipping Ansible configuration."
+                                    echo "SKIP_ANSIBLE=true" >> infrastructure_check.env
+                                    echo "⏭️  Infrastructure creation and Ansible configuration will be skipped."
+                                else
+                                    echo "❌ Docker not found. Ansible configuration will run to install Docker."
+                                    echo "SKIP_ANSIBLE=false" >> infrastructure_check.env
+                                    echo "⏭️  Infrastructure creation skipped, but Ansible will configure the server."
+                                fi
                             else
                                 echo "⚠️  Could not retrieve IP for existing instance. Will create new infrastructure."
                                 echo "SKIP_INFRASTRUCTURE=false" > infrastructure_check.env
