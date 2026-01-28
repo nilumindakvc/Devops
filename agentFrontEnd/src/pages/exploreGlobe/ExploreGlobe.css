@@ -1,0 +1,111 @@
+
+.maincontainer_globe_explore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline{
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    
+
+}
+.region_caption{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   /* background-color: aqua; */
+   margin-left: 105px;
+   width: 100%;
+   height: 40px;
+}
+.regions{
+    width: 95%;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* z-index: -1; */
+    overflow: scroll;
+    gap: 20px; /* optional spacing between cards */ 
+    padding: 10px;
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+   
+}
+
+
+.regions::-webkit-scrollbar {
+  height: 8px;
+}
+
+.regions::-webkit-scrollbar-thumb {
+  /* background-color: #ccc; */
+  border-radius: 4px;
+}
+.sub_region{
+    width: 400px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 50px; */
+    flex-shrink: 0;
+    cursor:pointer;
+    
+}
+.sub_region:hover{
+    opacity: 0.8;
+}
+.countries_available{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    /* background-color: aqua; */
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    
+   
+    
+
+}
+.topajencies{
+    width: 95%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 20px;
+   
+    /* background-color: aqua; */
+    margin-bottom: 100px;
+    z-index: 0;
+   
+}
+.card_container_top_As{
+    height: 100%;
+    width: 20%;
+    margin-left: 20px;
+}
+
+.accordion-collapse {
+  z-index: 1; /* make sure it's below the navbar */
+  position: relative; /* keep stacking context controlled */
+}
+
+.z-1 {
+  z-index: 1;
+}

@@ -1,0 +1,875 @@
+{
+  "ContentRoots": [
+    "/app/wwwroot/"
+  ],
+  "Root": {
+    "Children": {
+      "doc1": {
+        "Children": {
+          "010ff258-2ac0-4cd9-aeda-28dddae4b9a9.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/010ff258-2ac0-4cd9-aeda-28dddae4b9a9.pdf"
+            },
+            "Patterns": null
+          },
+          "0596b808-2f7d-48ec-bdf7-98d5f70f1c71.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/0596b808-2f7d-48ec-bdf7-98d5f70f1c71.pdf"
+            },
+            "Patterns": null
+          },
+          "12e290a9-770f-45db-8df6-ba733069dc8f.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/12e290a9-770f-45db-8df6-ba733069dc8f.pdf"
+            },
+            "Patterns": null
+          },
+          "17ab4b29-6298-4803-bb54-c3911ceab941.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/17ab4b29-6298-4803-bb54-c3911ceab941.pdf"
+            },
+            "Patterns": null
+          },
+          "1830d560-28be-4fc5-aeeb-59bab9baed6a.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/1830d560-28be-4fc5-aeeb-59bab9baed6a.pdf"
+            },
+            "Patterns": null
+          },
+          "1d7988df-d17e-4aa1-930e-a4122c5e6e18.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/1d7988df-d17e-4aa1-930e-a4122c5e6e18.jpg"
+            },
+            "Patterns": null
+          },
+          "2dbf724b-5ac8-4ec5-9668-85d4c935569f.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/2dbf724b-5ac8-4ec5-9668-85d4c935569f.png"
+            },
+            "Patterns": null
+          },
+          "316bd870-3279-4abb-8e2a-c89cb8d6c88a.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/316bd870-3279-4abb-8e2a-c89cb8d6c88a.pdf"
+            },
+            "Patterns": null
+          },
+          "36fd10ff-6bc4-4570-8898-e20794f02ee4.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/36fd10ff-6bc4-4570-8898-e20794f02ee4.pdf"
+            },
+            "Patterns": null
+          },
+          "42dedb06-db6e-4414-b082-d865369c223a.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/42dedb06-db6e-4414-b082-d865369c223a.png"
+            },
+            "Patterns": null
+          },
+          "554790ee-5168-4555-adca-45b1b407bfb5.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/554790ee-5168-4555-adca-45b1b407bfb5.pdf"
+            },
+            "Patterns": null
+          },
+          "5daa2f0b-4721-4b82-b5b6-2d91f74bf8f5.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/5daa2f0b-4721-4b82-b5b6-2d91f74bf8f5.jpg"
+            },
+            "Patterns": null
+          },
+          "67626cb3-06fe-490f-acff-0e32c728ee87.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/67626cb3-06fe-490f-acff-0e32c728ee87.pdf"
+            },
+            "Patterns": null
+          },
+          "6e820664-129a-4313-bef1-b20f21bc4d67.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/6e820664-129a-4313-bef1-b20f21bc4d67.pdf"
+            },
+            "Patterns": null
+          },
+          "6fafcc5a-7ec9-4447-a083-e7824a1389cb.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/6fafcc5a-7ec9-4447-a083-e7824a1389cb.jpg"
+            },
+            "Patterns": null
+          },
+          "78ac419c-00fa-4a34-b1c3-9d7370abe422.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/78ac419c-00fa-4a34-b1c3-9d7370abe422.pdf"
+            },
+            "Patterns": null
+          },
+          "799e2a05-e855-44aa-ab3f-4e8e2d924f9d.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/799e2a05-e855-44aa-ab3f-4e8e2d924f9d.jpg"
+            },
+            "Patterns": null
+          },
+          "7bbf6b26-584c-4c79-9657-ba58f7e31a39.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/7bbf6b26-584c-4c79-9657-ba58f7e31a39.jpg"
+            },
+            "Patterns": null
+          },
+          "8fbdf61f-39a3-4b01-b630-427cb1006f9c.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/8fbdf61f-39a3-4b01-b630-427cb1006f9c.png"
+            },
+            "Patterns": null
+          },
+          "934282ab-2e8c-46e9-aeb5-89c98ab348da.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/934282ab-2e8c-46e9-aeb5-89c98ab348da.pdf"
+            },
+            "Patterns": null
+          },
+          "951252ee-bda1-4b35-adbd-b979464fcee9.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/951252ee-bda1-4b35-adbd-b979464fcee9.jpg"
+            },
+            "Patterns": null
+          },
+          "9aa19c3d-a116-48e7-a3bb-b3d969db5d74.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/9aa19c3d-a116-48e7-a3bb-b3d969db5d74.png"
+            },
+            "Patterns": null
+          },
+          "b7c96012-dbce-4963-a4bb-2e82aac344a0.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/b7c96012-dbce-4963-a4bb-2e82aac344a0.pdf"
+            },
+            "Patterns": null
+          },
+          "ba09192a-8b93-4de0-8d53-ceb981a0f6d2.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/ba09192a-8b93-4de0-8d53-ceb981a0f6d2.jpg"
+            },
+            "Patterns": null
+          },
+          "cd2e317d-9953-43c4-8fd3-9026d7ff109b.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/cd2e317d-9953-43c4-8fd3-9026d7ff109b.png"
+            },
+            "Patterns": null
+          },
+          "d115f2df-ced5-4fbe-8983-2984ce2d41ba.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/d115f2df-ced5-4fbe-8983-2984ce2d41ba.png"
+            },
+            "Patterns": null
+          },
+          "d446b8a7-0d48-4306-b382-7ebad7f68c7c.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/d446b8a7-0d48-4306-b382-7ebad7f68c7c.jpg"
+            },
+            "Patterns": null
+          },
+          "d55d7ba6-136a-4776-9a4b-43bba988d722.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/d55d7ba6-136a-4776-9a4b-43bba988d722.pdf"
+            },
+            "Patterns": null
+          },
+          "d79d37ec-36fb-44af-8c74-7a7bd8ac8cd2.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/d79d37ec-36fb-44af-8c74-7a7bd8ac8cd2.jpg"
+            },
+            "Patterns": null
+          },
+          "d8fde49f-4a73-44bd-a631-628c1de86d70.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/d8fde49f-4a73-44bd-a631-628c1de86d70.pdf"
+            },
+            "Patterns": null
+          },
+          "e1483325-0430-4f57-aba8-cf85e7c00a1b.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/e1483325-0430-4f57-aba8-cf85e7c00a1b.pdf"
+            },
+            "Patterns": null
+          },
+          "e55c78e2-a599-4b66-941c-01f0ba49da56.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/e55c78e2-a599-4b66-941c-01f0ba49da56.jpg"
+            },
+            "Patterns": null
+          },
+          "ef81d47c-cb1a-40ce-8bb9-17e20a934786.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/ef81d47c-cb1a-40ce-8bb9-17e20a934786.jpg"
+            },
+            "Patterns": null
+          },
+          "f7710ff7-b90a-4e25-961e-55481db51ad0.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/f7710ff7-b90a-4e25-961e-55481db51ad0.pdf"
+            },
+            "Patterns": null
+          },
+          "fcb0669d-0ae1-47ef-87ac-a986352a0875.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc1/fcb0669d-0ae1-47ef-87ac-a986352a0875.jpg"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      },
+      "doc2": {
+        "Children": {
+          "0403ada1-5457-45ec-b631-0606c4977729.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/0403ada1-5457-45ec-b631-0606c4977729.jpg"
+            },
+            "Patterns": null
+          },
+          "07fd19be-d59c-499d-afb4-ad9d2a1fd4b6.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/07fd19be-d59c-499d-afb4-ad9d2a1fd4b6.jpg"
+            },
+            "Patterns": null
+          },
+          "1bd3d43f-73e4-4af4-8021-886db5d3192e.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/1bd3d43f-73e4-4af4-8021-886db5d3192e.pdf"
+            },
+            "Patterns": null
+          },
+          "303cb199-d2b2-43f1-bc8b-f4ffb4515943.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/303cb199-d2b2-43f1-bc8b-f4ffb4515943.jpg"
+            },
+            "Patterns": null
+          },
+          "38e3c55e-095e-4736-8fab-d931797f70e4.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/38e3c55e-095e-4736-8fab-d931797f70e4.pdf"
+            },
+            "Patterns": null
+          },
+          "3a1faf7f-3e2f-4bcb-93d1-8b6754d6425a.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/3a1faf7f-3e2f-4bcb-93d1-8b6754d6425a.jpg"
+            },
+            "Patterns": null
+          },
+          "3b5751c1-02b4-4274-af09-ae774f031759.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/3b5751c1-02b4-4274-af09-ae774f031759.jpg"
+            },
+            "Patterns": null
+          },
+          "499d7f5a-035c-454f-abb5-fc940c3b02a7.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/499d7f5a-035c-454f-abb5-fc940c3b02a7.png"
+            },
+            "Patterns": null
+          },
+          "4c842674-5415-4248-9cea-d52f284654d3.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/4c842674-5415-4248-9cea-d52f284654d3.jpg"
+            },
+            "Patterns": null
+          },
+          "6d234ea2-1983-43e8-824b-6d39b9ceff39.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/6d234ea2-1983-43e8-824b-6d39b9ceff39.pdf"
+            },
+            "Patterns": null
+          },
+          "7644c6a7-8e91-43f9-adaf-1ae551a003fe.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/7644c6a7-8e91-43f9-adaf-1ae551a003fe.png"
+            },
+            "Patterns": null
+          },
+          "78924131-68bd-4a90-b95b-c04acfb27d75.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/78924131-68bd-4a90-b95b-c04acfb27d75.pdf"
+            },
+            "Patterns": null
+          },
+          "83b51d93-248d-4707-a681-95d0f1e8d238.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/83b51d93-248d-4707-a681-95d0f1e8d238.pdf"
+            },
+            "Patterns": null
+          },
+          "86eb2580-14d9-45bf-9c56-1642a252417f.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/86eb2580-14d9-45bf-9c56-1642a252417f.pdf"
+            },
+            "Patterns": null
+          },
+          "8dae523a-5738-4246-845c-0e5c09b0e856.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/8dae523a-5738-4246-845c-0e5c09b0e856.pdf"
+            },
+            "Patterns": null
+          },
+          "8f6588d5-0c78-4274-a35e-8ab4362ac84c.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/8f6588d5-0c78-4274-a35e-8ab4362ac84c.jpg"
+            },
+            "Patterns": null
+          },
+          "8ffa5831-39f3-4362-97b4-c03fa1eaa0b1.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/8ffa5831-39f3-4362-97b4-c03fa1eaa0b1.jpg"
+            },
+            "Patterns": null
+          },
+          "94c85cb7-860a-466b-a5bd-6fee29f36f27.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/94c85cb7-860a-466b-a5bd-6fee29f36f27.pdf"
+            },
+            "Patterns": null
+          },
+          "9c6c711f-9a76-4bfe-9e6d-8845f0b5c39c.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/9c6c711f-9a76-4bfe-9e6d-8845f0b5c39c.pdf"
+            },
+            "Patterns": null
+          },
+          "b0b0108c-a2cd-43a0-b18a-d0fe32cab768.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/b0b0108c-a2cd-43a0-b18a-d0fe32cab768.jpg"
+            },
+            "Patterns": null
+          },
+          "b1aba71c-e034-4bcf-a1d4-b792317736d6.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/b1aba71c-e034-4bcf-a1d4-b792317736d6.pdf"
+            },
+            "Patterns": null
+          },
+          "b667e1c9-7327-4057-bf6c-d1afa540b347.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/b667e1c9-7327-4057-bf6c-d1afa540b347.jpg"
+            },
+            "Patterns": null
+          },
+          "bba068d6-cb06-4843-b994-cdc8afb8f2e4.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/bba068d6-cb06-4843-b994-cdc8afb8f2e4.pdf"
+            },
+            "Patterns": null
+          },
+          "c1b82796-914c-4ad3-8510-4d5d4ce077d9.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/c1b82796-914c-4ad3-8510-4d5d4ce077d9.png"
+            },
+            "Patterns": null
+          },
+          "cc9b198f-a722-4d2a-af6e-a41e78babe79.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/cc9b198f-a722-4d2a-af6e-a41e78babe79.jpg"
+            },
+            "Patterns": null
+          },
+          "cf770410-0f21-4849-a0b4-28bf124e7ab3.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/cf770410-0f21-4849-a0b4-28bf124e7ab3.png"
+            },
+            "Patterns": null
+          },
+          "d6118ff0-5a9d-4e37-abd8-39f9997489a5.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/d6118ff0-5a9d-4e37-abd8-39f9997489a5.pdf"
+            },
+            "Patterns": null
+          },
+          "d6c05190-29c0-4cdd-888e-c2fe23bf1c41.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/d6c05190-29c0-4cdd-888e-c2fe23bf1c41.jpg"
+            },
+            "Patterns": null
+          },
+          "d8ec0002-3898-423b-84a9-0a491929895e.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/d8ec0002-3898-423b-84a9-0a491929895e.png"
+            },
+            "Patterns": null
+          },
+          "db7ed22a-efe9-4cc1-9664-ad9a87721474.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/db7ed22a-efe9-4cc1-9664-ad9a87721474.png"
+            },
+            "Patterns": null
+          },
+          "dc8cb165-101e-427c-a23d-3560b208eebf.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/dc8cb165-101e-427c-a23d-3560b208eebf.pdf"
+            },
+            "Patterns": null
+          },
+          "e0aa3dd7-f27d-410a-9ebc-ceef846c46fd.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/e0aa3dd7-f27d-410a-9ebc-ceef846c46fd.pdf"
+            },
+            "Patterns": null
+          },
+          "eea0aaf5-7781-4dec-8748-2b5adfe081d9.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/eea0aaf5-7781-4dec-8748-2b5adfe081d9.pdf"
+            },
+            "Patterns": null
+          },
+          "f4a2908c-3faf-40db-9888-4c45fe5ccca1.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/f4a2908c-3faf-40db-9888-4c45fe5ccca1.pdf"
+            },
+            "Patterns": null
+          },
+          "f8df1d97-c0e7-4eaa-adf0-c9f7445c8239.pdf": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "doc2/f8df1d97-c0e7-4eaa-adf0-c9f7445c8239.pdf"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      },
+      "logo": {
+        "Children": {
+          "06e76820-1211-495e-9925-b9c2e013b829.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/06e76820-1211-495e-9925-b9c2e013b829.png"
+            },
+            "Patterns": null
+          },
+          "0c6c675e-7a20-4807-a2f6-7a980daae600.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/0c6c675e-7a20-4807-a2f6-7a980daae600.jpg"
+            },
+            "Patterns": null
+          },
+          "104e62b8-4283-4bbb-9aea-110b402df138.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/104e62b8-4283-4bbb-9aea-110b402df138.jpg"
+            },
+            "Patterns": null
+          },
+          "12db05fa-d376-4646-9a83-ff3cd7ff17c4.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/12db05fa-d376-4646-9a83-ff3cd7ff17c4.png"
+            },
+            "Patterns": null
+          },
+          "1fd6b499-1420-41ec-869d-db617404a944.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/1fd6b499-1420-41ec-869d-db617404a944.png"
+            },
+            "Patterns": null
+          },
+          "232bf1d9-a009-469e-bbee-944923837be1.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/232bf1d9-a009-469e-bbee-944923837be1.png"
+            },
+            "Patterns": null
+          },
+          "2bf5c0f4-ba16-4cf0-bb78-a251c233b790.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/2bf5c0f4-ba16-4cf0-bb78-a251c233b790.jpg"
+            },
+            "Patterns": null
+          },
+          "2fdf5025-7c52-42b6-8457-981c82f5eb34.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/2fdf5025-7c52-42b6-8457-981c82f5eb34.jpg"
+            },
+            "Patterns": null
+          },
+          "3793260e-b5dd-420c-8d8b-7e16d2e3dca2.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/3793260e-b5dd-420c-8d8b-7e16d2e3dca2.jpg"
+            },
+            "Patterns": null
+          },
+          "38684fff-4166-49e5-b162-de80a0ce654a.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/38684fff-4166-49e5-b162-de80a0ce654a.jpg"
+            },
+            "Patterns": null
+          },
+          "39b396cb-6975-4aed-be65-50bdea0a6851.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/39b396cb-6975-4aed-be65-50bdea0a6851.png"
+            },
+            "Patterns": null
+          },
+          "402d06a2-c364-49b5-9d97-bf7043d407b1.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/402d06a2-c364-49b5-9d97-bf7043d407b1.png"
+            },
+            "Patterns": null
+          },
+          "44295d31-94d5-4204-800f-58c06854ce78.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/44295d31-94d5-4204-800f-58c06854ce78.png"
+            },
+            "Patterns": null
+          },
+          "49230440-ffc2-4cf3-bc22-bc30e1fa6423.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/49230440-ffc2-4cf3-bc22-bc30e1fa6423.jpg"
+            },
+            "Patterns": null
+          },
+          "554210ed-e68d-4e6d-95e0-47ec20315c34.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/554210ed-e68d-4e6d-95e0-47ec20315c34.jpg"
+            },
+            "Patterns": null
+          },
+          "55cd01f2-7a5f-4434-9e65-fe84ca01e1b6.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/55cd01f2-7a5f-4434-9e65-fe84ca01e1b6.png"
+            },
+            "Patterns": null
+          },
+          "663a281e-94bd-4616-82a2-864c3a6c82da.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/663a281e-94bd-4616-82a2-864c3a6c82da.jpg"
+            },
+            "Patterns": null
+          },
+          "75a1ce06-4b00-4a76-a0f4-6bac51e9ba63.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/75a1ce06-4b00-4a76-a0f4-6bac51e9ba63.jpg"
+            },
+            "Patterns": null
+          },
+          "850f1108-e858-4488-8ef6-e1548b4056f7.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/850f1108-e858-4488-8ef6-e1548b4056f7.jpg"
+            },
+            "Patterns": null
+          },
+          "8a6f92f0-059f-4a90-95b4-f862f7bc45bf.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/8a6f92f0-059f-4a90-95b4-f862f7bc45bf.jpg"
+            },
+            "Patterns": null
+          },
+          "90c628e3-9d67-4ab8-ade2-28b259fb9a8b.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/90c628e3-9d67-4ab8-ade2-28b259fb9a8b.png"
+            },
+            "Patterns": null
+          },
+          "9b521d1e-0d3c-4fe2-a8b8-3e320cccda35.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/9b521d1e-0d3c-4fe2-a8b8-3e320cccda35.jpg"
+            },
+            "Patterns": null
+          },
+          "a12614d3-7f59-4749-bde3-9e483ad61c12.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/a12614d3-7f59-4749-bde3-9e483ad61c12.jpg"
+            },
+            "Patterns": null
+          },
+          "a1a399cb-3e0e-4bd2-9aae-d1c2d9926e42.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/a1a399cb-3e0e-4bd2-9aae-d1c2d9926e42.jpg"
+            },
+            "Patterns": null
+          },
+          "a2e8f545-6de7-4dd2-b671-9416adb2255e.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/a2e8f545-6de7-4dd2-b671-9416adb2255e.jpg"
+            },
+            "Patterns": null
+          },
+          "b3b1a1d5-0ff4-4ddc-9d24-77551568f22f.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/b3b1a1d5-0ff4-4ddc-9d24-77551568f22f.jpg"
+            },
+            "Patterns": null
+          },
+          "d50ede76-2882-43cb-bab9-f5cbf489c63c.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/d50ede76-2882-43cb-bab9-f5cbf489c63c.jpg"
+            },
+            "Patterns": null
+          },
+          "e147ed48-5fbe-4926-94f2-2288016e2396.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/e147ed48-5fbe-4926-94f2-2288016e2396.jpg"
+            },
+            "Patterns": null
+          },
+          "ed08cc59-59c3-48ca-acb8-40c46e17bf30.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/ed08cc59-59c3-48ca-acb8-40c46e17bf30.jpg"
+            },
+            "Patterns": null
+          },
+          "f256221c-dab7-4c30-b0dc-30f28d412e9c.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/f256221c-dab7-4c30-b0dc-30f28d412e9c.png"
+            },
+            "Patterns": null
+          },
+          "f33ea7fc-9e0c-497c-9e17-ff5969a641a6.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/f33ea7fc-9e0c-497c-9e17-ff5969a641a6.png"
+            },
+            "Patterns": null
+          },
+          "f8a6916b-a0c3-4abb-9e8f-1aa2320c5e6d.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/f8a6916b-a0c3-4abb-9e8f-1aa2320c5e6d.png"
+            },
+            "Patterns": null
+          },
+          "f93249be-2a31-4b16-afd1-1c2ce783707a.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/f93249be-2a31-4b16-afd1-1c2ce783707a.jpg"
+            },
+            "Patterns": null
+          },
+          "fdb58bc3-ff94-4062-972a-14cd728f4633.png": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/fdb58bc3-ff94-4062-972a-14cd728f4633.png"
+            },
+            "Patterns": null
+          },
+          "fe1157ed-03d7-4372-9470-0e149a240109.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "logo/fe1157ed-03d7-4372-9470-0e149a240109.jpg"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      }
+    },
+    "Asset": null,
+    "Patterns": [
+      {
+        "ContentRootIndex": 0,
+        "Pattern": "**",
+        "Depth": 0
+      }
+    ]
+  }
+}

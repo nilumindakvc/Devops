@@ -1,0 +1,306 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\controllers\\agencycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\controllers\\agencycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\generic\\tableoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\generic\\tableoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\agencycountryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\agencycountryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\agencydocumentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\agencydocumentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\agencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\agencyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\agencyreviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\agencyreviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\jobapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\jobapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\jobcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\jobcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\jobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\jobrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\tableinteraction\\tablespecificinteract\\regionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\tableinteraction\\tablespecificinteract\\regionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|f:\\asp.net - copy\\agentbackend\\agent\\agent\\seeds\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D26EF2C-962A-4228-886E-9C3A001298D9}|agent\\agent.csproj|solutionrelative:agent\\seeds\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 307,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AgencyController.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\Controllers\\AgencyController.cs",
+              "RelativeDocumentMoniker": "agent\\Controllers\\AgencyController.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\Controllers\\AgencyController.cs",
+              "RelativeToolTip": "agent\\Controllers\\AgencyController.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAgwEsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-26T11:06:51.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AgencyDocumentRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyDocumentRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\AgencyDocumentRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyDocumentRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\AgencyDocumentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:27:39.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AgencyCountryRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyCountryRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\AgencyCountryRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyCountryRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\AgencyCountryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:27:29.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TableOperations.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\generic\\TableOperations.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\generic\\TableOperations.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\generic\\TableOperations.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\generic\\TableOperations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:26:57.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\appsettings.json",
+              "RelativeDocumentMoniker": "agent\\appsettings.json",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\appsettings.json",
+              "RelativeToolTip": "agent\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-24T10:56:59.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\Program.cs",
+              "RelativeDocumentMoniker": "agent\\Program.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\Program.cs",
+              "RelativeToolTip": "agent\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T10:43:58.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\UserRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\UserRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\UserRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:29:04.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AgencyRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\AgencyRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\AgencyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:27:45.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AgencyReviewRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyReviewRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\AgencyReviewRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\AgencyReviewRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\AgencyReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:27:53.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CountryRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\CountryRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\CountryRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\CountryRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\CountryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:28:03.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "JobApplicationRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\JobApplicationRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\JobApplicationRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\JobApplicationRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\JobApplicationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:28:10.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "JobCategoryRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\JobCategoryRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\JobCategoryRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\JobCategoryRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\JobCategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:28:25.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "JobRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\JobRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\JobRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\JobRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\JobRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:28:34.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RegionRepository.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\RegionRepository.cs",
+              "RelativeDocumentMoniker": "agent\\TableInteraction\\TableSpecificInteract\\RegionRepository.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\TableInteraction\\TableSpecificInteract\\RegionRepository.cs",
+              "RelativeToolTip": "agent\\TableInteraction\\TableSpecificInteract\\RegionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T09:28:50.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DbSeeder.cs",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\Seeds\\DbSeeder.cs",
+              "RelativeDocumentMoniker": "agent\\Seeds\\DbSeeder.cs",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\Seeds\\DbSeeder.cs",
+              "RelativeToolTip": "agent\\Seeds\\DbSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoBAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T15:17:49.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": ".env",
+              "DocumentMoniker": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\.env",
+              "RelativeDocumentMoniker": "agent\\.env",
+              "ToolTip": "F:\\ASP.NET - Copy\\agentBackEnd\\agent\\agent\\.env",
+              "RelativeToolTip": "agent\\.env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-24T14:31:44.582Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1498,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

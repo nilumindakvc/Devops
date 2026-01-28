@@ -1,0 +1,124 @@
+.maincontainer_agency_registering{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main_title_AR{
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-left: 50px;
+    
+
+}
+.step_progress_sec1{
+    width: 90%;
+    height: auto;
+    margin-top: 50px;
+    padding: 50px;
+    padding-bottom: 0;
+    display: flex;
+
+}
+.icon{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+.step_progress_sec2{
+    width: 80%;
+    height: 50px; 
+    margin-bottom: 100px;
+}
+
+.account_creation{
+  width: 95%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #ebf5ee; */
+  
+}
+.account_creation_coloumn{
+    height: 100%;
+    padding: 40px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+.sub_title_AR{
+    width: 100%;
+    height: auto;
+    padding-left: 50px;
+    
+}
+.button_group{
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.certification_upload{
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* background-color: #ebf5ee; */
+  
+}
+.last_title_AR{
+    width: 95%;
+    height: auto;
+    padding-top: 50px;
+    padding-left: 50px;
+    margin-bottom: 100px;
+
+}
+.publish_section{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  /* background-color: #ebf5ee; */
+
+}
+
+.sub_publish_section{
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.select_create_update{
+   width: 100%;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 100px;
+   
+
+}
+.publish_image{
+    width: auto;
+    height: 400px;
+}

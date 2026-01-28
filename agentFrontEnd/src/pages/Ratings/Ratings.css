@@ -1,0 +1,105 @@
+.maincontainer_Ratings{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.main_title_R{
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+.sub_title_R{
+    width: 100%;
+    height: auto;
+    padding-left: 50px;
+}
+.one_two_three_container{
+    width: 95%;
+    height: 480px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 40px;
+    
+}
+.two{
+    width: 22%;
+    height: 85%;
+
+}
+.one{
+    width: 22%;
+    height: 100%;
+}
+.three{
+    width: 22%;
+    height: 75%;
+}
+
+.common_all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width: 100%;
+    height: 200px;
+    /* background-color: chartreuse; */
+    justify-content: center;
+    /* background-color: white; */
+    
+    
+}
+.name{
+    width: 100%;
+    height: 60px;
+    /* background-color: blueviolet; */
+    justify-content: center;
+    /* background-color: white; */
+    
+}
+.number{
+    justify-content: center;
+}
+.toplist{
+    width: 95%;
+    height: auto;
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* z-index: -1; */
+}
+
+.user_reviews{
+   width: 95%;
+   height: auto;
+   padding: 40px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 20px;
+   z-index: -1;
+}
+.card_container{
+    width: 200px;
+    height: auto;
+}
+
+.writing_review_section{
+   width: 95%;
+   height: auto;
+   margin-top: 50px;
+   margin-bottom: 50px;
+
+   margin-left: 50px;
+ 
+}
