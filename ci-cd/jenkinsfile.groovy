@@ -95,8 +95,8 @@ pipeline {
         stage('Provision Infrastructure') {
             when {
                 expression {
-                    def props = readProperties file: 'infrastructure_check.env'
-                    return props.SKIP_INFRASTRUCTURE != 'true'
+                    def skipInfra = sh(returnStdout: true, script: 'grep "SKIP_INFRASTRUCTURE=true" infrastructure_check.env || echo "not_found"').trim()
+                    return skipInfra == 'not_found'
                 }
             }
             steps {
@@ -121,8 +121,8 @@ pipeline {
         stage('Configure Server with Ansible') {
             when {
                 expression {
-                    def props = readProperties file: 'infrastructure_check.env'
-                    return props.SKIP_ANSIBLE != 'true'
+                    def skipAnsible = sh(returnStdout: true, script: 'grep "SKIP_ANSIBLE=true" infrastructure_check.env || echo "not_found"').trim()
+                    return skipAnsible == 'not_found'
                 }
             }
             steps {
