@@ -65,34 +65,26 @@ variable "project_name" {
   default     = "devops-final-project"
 }
 
-# AMI ID mapping for different regions as fallback
-variable "ami_id" {
-  description = "AMI ID to use (leave empty for automatic lookup)"
-  type        = string
-  default     = ""
-}
-
+# Use hardcoded Ubuntu AMI ID for eu-north-1 region for reliability
 locals {
-  # Fallback AMI IDs for different regions (Ubuntu 22.04 LTS)
-  region_amis = {
-    "eu-north-1" = "ami-0014ce3e52359afbd"  # Ubuntu 22.04 LTS
-    "us-east-1"  = "ami-0e001c9271cf7f3b9"  # Ubuntu 22.04 LTS  
-    "us-west-2"  = "ami-0efcece6bed30fd98"  # Ubuntu 22.04 LTS
-    "eu-west-1"  = "ami-01dd271720c1ba44f"  # Ubuntu 22.04 LTS
+  ubuntu_ami_id = {
+    "eu-north-1" = "ami-0914547665e6a707c" # Ubuntu 22.04 LTS in Stockholm
+    "us-east-1"  = "ami-0e001c9271cf7f3b9" # Ubuntu 22.04 LTS in Virginia  
+    "eu-west-1"  = "ami-0905a3c97561e0b69" # Ubuntu 22.04 LTS in Ireland
   }
-  
-  use_fallback_ami = var.ami_id != "" ? var.ami_id : lookup(local.region_amis, var.aws_region, "")
 }
 
-# Data source to get the latest Ubuntu AMI - with fallback for eu-north-1
+# Data source to get Ubuntu AMI - with fallback to dynamic search
 data "aws_ami" "ubuntu" {
+  count       = contains(keys(local.ubuntu_ami_id), var.aws_region) ? 0 : 1
   most_recent = true
   owners      = ["099720109477"] # Canonical
 
   filter {
     name   = "name"
     values = [
-      "ubuntu/images/hvm-ssd/ubuntu-*-amd64-server-*"
+      "ubuntu/images/hvm-ssd/ubuntu-22.04-amd64-server-*", 
+      "ubuntu/images/hvm-ssd/ubuntu-20.04-amd64-server-*"
     ]
   }
 
@@ -104,11 +96,6 @@ data "aws_ami" "ubuntu" {
   filter {
     name   = "state"
     values = ["available"]
-  }
-  
-  filter {
-    name   = "architecture"  
-    values = ["x86_64"]
   }
 }
 
@@ -229,7 +216,7 @@ resource "aws_security_group" "web_server" {
 resource "aws_instance" "web_server" {
   count = local.skip_creation ? 0 : 1
   
-  ami                     = local.use_fallback_ami != "" ? local.use_fallback_ami : data.aws_ami.ubuntu.id
+  ami                     = contains(keys(local.ubuntu_ami_id), var.aws_region) ? local.ubuntu_ami_id[var.aws_region] : data.aws_ami.ubuntu[0].id
   instance_type           = var.instance_type  # t2.micro (1GB RAM - Free tier)
   key_name                = aws_key_pair.devops_key.key_name
   vpc_security_group_ids  = [aws_security_group.web_server.id]
@@ -237,9 +224,9 @@ resource "aws_instance" "web_server" {
   disable_api_termination = false
 
   tags = {
-    Name    = "${var.project_name}-ubuntu-server"
+    Name    = "${var.project_name}-amazon-linux-server"
     Project = var.project_name
-    OS      = "Ubuntu 22.04 LTS"
+    OS      = "Amazon Linux 2"
     RAM     = "1GB"
     Tier    = "Free Tier Eligible"
   }
