@@ -166,9 +166,16 @@ pipeline {
                         echo "Waiting for EC2 instance to be ready..."
                         sleep 60
                         
-                        # Terraform has already generated the inventory file with actual IP
-                        # Run Ansible playbook
+                        # Create inventory file from template since Terraform was skipped
+                        echo "Creating inventory file from template..."
                         cd automation/ansible
+                        EC2_IP=$(grep 'EC2_IP=' ../../infrastructure_check.env | cut -d'=' -f2)
+                        sed "s/\${ec2_public_ip}/$EC2_IP/g; s|\${ssh_key_path}|../../ssh-keys/my-key-pair.pem|g" inventory/inventory.ini.tpl > inventory/inventory.ini
+                        
+                        echo "Generated inventory file:"
+                        cat inventory/inventory.ini
+                        
+                        # Run Ansible playbook
                         export PATH="$HOME/.local/bin:$PATH"
                         ansible-playbook playbooks/configure-ec2.yml
                     '''
