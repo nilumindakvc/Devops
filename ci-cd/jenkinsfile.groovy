@@ -69,6 +69,7 @@ pipeline {
                             
                             if [ ! -z "$EXISTING_IP" ] && [ "$EXISTING_IP" != "" ] && [ "$EXISTING_IP" != "None" ]; then
                                 echo "EC2_IP=$EXISTING_IP" > ec2_info.env
+                                echo "EC2_IP=$EXISTING_IP" >> infrastructure_check.env
                                 echo "✅ Using existing EC2 instance with IP: $EXISTING_IP"
                                 
                                 # Check if Docker is installed on the existing instance
