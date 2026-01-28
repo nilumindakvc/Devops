@@ -221,7 +221,7 @@ pipeline {
                 script {
                     sh '''
                         # Load EC2 IP
-                        . ec2_info.env
+                        . ./ec2_info.env
                         
                         # SSH to EC2 and deploy with individual Docker commands
                         ssh -i ssh-keys/my-key-pair.pem -o StrictHostKeyChecking=no ${EC2_USER}@$EC2_IP << ENDSSH
@@ -286,7 +286,7 @@ ENDSSH
         success {
             script {
                 sh '''
-                    . ec2_info.env
+                    . ./ec2_info.env
                     echo "Deployment Successful!"
                     echo "Frontend URL: http://$EC2_IP:3000"
                    
