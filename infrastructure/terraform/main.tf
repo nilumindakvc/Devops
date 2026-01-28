@@ -53,16 +53,6 @@ variable "instance_type" {
   default     = "t3.micro"  # Default for eu-north-1
 }
 
-# Local values for region-specific configurations
-locals {
-  instance_type_map = {
-    "eu-north-1" = "t3.micro"   # Stockholm - Free tier eligible
-    "us-east-1"  = "t2.micro"   # Virginia - Free tier eligible
-    "eu-west-1"  = "t2.micro"   # Ireland - Free tier eligible
-  }
-  
-  actual_instance_type = contains(keys(local.instance_type_map), var.aws_region) ? local.instance_type_map[var.aws_region] : var.instance_type
-
 variable "key_pair_name" {
   description = "Name of the AWS key pair"
   type        = string
@@ -75,8 +65,17 @@ variable "project_name" {
   default     = "devops-final-project"
 }
 
-# Use hardcoded Ubuntu AMI ID for eu-north-1 region for reliability
+# Local values for region-specific configurations
 locals {
+  instance_type_map = {
+    "eu-north-1" = "t3.micro"   # Stockholm - Free tier eligible
+    "us-east-1"  = "t2.micro"   # Virginia - Free tier eligible
+    "eu-west-1"  = "t2.micro"   # Ireland - Free tier eligible
+  }
+  
+  actual_instance_type = contains(keys(local.instance_type_map), var.aws_region) ? local.instance_type_map[var.aws_region] : var.instance_type
+
+# Use hardcoded Ubuntu AMI ID for eu-north-1 region for reliability
   ubuntu_ami_id = {
     "eu-north-1" = "ami-0914547665e6a707c" # Ubuntu 22.04 LTS in Stockholm
     "us-east-1"  = "ami-0e001c9271cf7f3b9" # Ubuntu 22.04 LTS in Virginia  
