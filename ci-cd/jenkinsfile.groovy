@@ -157,10 +157,15 @@ pipeline {
             steps {
                 script {
                     sh '''
+                        echo "Current directory: $(pwd)"
+                        echo "Files in directory: $(ls -la)"
+                        
                         if [ -f infrastructure_check.env ]; then
-                            . infrastructure_check.env
+                            echo "Found infrastructure_check.env file"
+                            . ./infrastructure_check.env
                             if [ -f ec2_info.env ]; then
-                                . ec2_info.env
+                                echo "Found ec2_info.env file"
+                                . ./ec2_info.env
                             fi
                             
                             echo "=== INFRASTRUCTURE STATUS ==="
@@ -177,6 +182,10 @@ pipeline {
                                 echo "⚙️  Configured server with Ansible"
                             fi
                             echo "=============================="
+                        else
+                            echo "❌ infrastructure_check.env file not found"
+                            echo "Available files:"
+                            ls -la | grep "\.env"
                         fi
                     '''
                 }
