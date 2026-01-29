@@ -267,6 +267,9 @@ pipeline {
                             docker pull ${BACKEND_IMAGE}:latest
                             docker pull ${FRONTEND_IMAGE}:latest
                             
+                            # Wait for any remaining processes to clean up
+                            sleep 5
+                            
                             # Run backend container - maps container port 8080 to host port 8080
                             echo "Starting backend container..."
                             docker run -d \\
