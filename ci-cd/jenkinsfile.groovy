@@ -258,7 +258,7 @@ pipeline {
                         PORT_8080_EXISTS=$(aws ec2 describe-security-groups \
                             --region ${AWS_REGION} \
                             --group-ids $SECURITY_GROUP_ID \
-                            --query "SecurityGroups[0].IpPermissions[?FromPort==\`8080\`]" \
+                            --query 'SecurityGroups[0].IpPermissions[?FromPort==`8080`]' \
                             --output text 2>/dev/null || echo "")
                         
                         if [ -z "$PORT_8080_EXISTS" ] || [ "$PORT_8080_EXISTS" = "None" ]; then
