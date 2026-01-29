@@ -216,6 +216,85 @@ pipeline {
             }
         }
 
+        stage('Ensure Security Group Ports Open') {
+            steps {
+                script {
+                    sh '''
+                        echo "🔐 Ensuring security group has required ports open..."
+                        
+                        if [ -f ec2_info.env ]; then
+                            . ./ec2_info.env
+                        fi
+                        
+                        # Get instance ID
+                        INSTANCE_ID=$(aws ec2 describe-instances \
+                            --region ${AWS_REGION} \
+                            --filters "Name=instance-state-name,Values=running" "Name=tag:Project,Values=${PROJECT_NAME}" \
+                            --query 'Reservations[0].Instances[0].InstanceId' \
+                            --output text 2>/dev/null || echo "")
+                        
+                        if [ -z "$INSTANCE_ID" ] || [ "$INSTANCE_ID" = "None" ]; then
+                            echo "⚠️  Could not find instance ID, skipping security group check"
+                            exit 0
+                        fi
+                        
+                        echo "Found instance: $INSTANCE_ID"
+                        
+                        # Get security group ID
+                        SECURITY_GROUP_ID=$(aws ec2 describe-instances \
+                            --region ${AWS_REGION} \
+                            --instance-ids $INSTANCE_ID \
+                            --query 'Reservations[0].Instances[0].SecurityGroups[0].GroupId' \
+                            --output text 2>/dev/null || echo "")
+                        
+                        if [ -z "$SECURITY_GROUP_ID" ] || [ "$SECURITY_GROUP_ID" = "None" ]; then
+                            echo "⚠️  Could not find security group, skipping"
+                            exit 0
+                        fi
+                        
+                        echo "Security Group: $SECURITY_GROUP_ID"
+                        
+                        # Check if port 8080 rule already exists
+                        PORT_8080_EXISTS=$(aws ec2 describe-security-groups \
+                            --region ${AWS_REGION} \
+                            --group-ids $SECURITY_GROUP_ID \
+                            --query "SecurityGroups[0].IpPermissions[?FromPort==\`8080\`]" \
+                            --output text 2>/dev/null || echo "")
+                        
+                        if [ -z "$PORT_8080_EXISTS" ] || [ "$PORT_8080_EXISTS" = "None" ]; then
+                            echo "➕ Adding port 8080 to security group..."
+                            aws ec2 authorize-security-group-ingress \
+                                --region ${AWS_REGION} \
+                                --group-id $SECURITY_GROUP_ID \
+                                --protocol tcp \
+                                --port 8080 \
+                                --cidr 0.0.0.0/0 \
+                                --tag-specifications "ResourceType=security-group-rule,Tags=[{Key=Name,Value=Backend-API-8080}]" 2>/dev/null || \
+                            aws ec2 authorize-security-group-ingress \
+                                --region ${AWS_REGION} \
+                                --group-id $SECURITY_GROUP_ID \
+                                --protocol tcp \
+                                --port 8080 \
+                                --cidr 0.0.0.0/0 2>/dev/null || echo "Port 8080 rule may already exist"
+                            echo "✅ Port 8080 rule added to security group"
+                        else
+                            echo "✅ Port 8080 already open in security group"
+                        fi
+                        
+                        # Verify all required ports
+                        echo ""
+                        echo "=== Current Security Group Rules ==="
+                        aws ec2 describe-security-groups \
+                            --region ${AWS_REGION} \
+                            --group-ids $SECURITY_GROUP_ID \
+                            --query 'SecurityGroups[0].IpPermissions[*].[FromPort,ToPort,IpProtocol]' \
+                            --output table 2>/dev/null || echo "Could not list rules"
+                        echo "===================================="
+                    '''
+                }
+            }
+        }
+
         stage('Build Docker Images') {
             parallel {
                 stage('Build Frontend') {

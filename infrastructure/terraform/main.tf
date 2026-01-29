@@ -196,13 +196,22 @@ resource "aws_security_group" "web_server" {
     description = "HTTPS web traffic"
   }
 
-  # Application ports
+  # Frontend application port
   ingress {
     from_port   = 3000
-    to_port     = 5000
+    to_port     = 3000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-    description = "Application ports (frontend and backend)"
+    description = "Frontend application port"
+  }
+
+  # Backend API port
+  ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Backend API port"
   }
 
   # All outbound traffic
