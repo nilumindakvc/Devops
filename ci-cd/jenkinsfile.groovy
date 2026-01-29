@@ -275,7 +275,7 @@ pipeline {
                             docker run -d \\
                                 --name agent-backend \\
                                 -p 8080:8080 \\
-                                -e ASPNETCORE_ENVIRONMENT=Production \\
+                                -e ASPNETCORE_ENVIRONMENT=Development \\
                                 -e "ASPNETCORE_URLS=http://+:8080" \\
                                 --restart unless-stopped \\
                                 ${BACKEND_IMAGE}:latest
@@ -295,9 +295,15 @@ pipeline {
                             # Show running containers
                             docker ps
                             
-                            # Show container logs (last 5 lines)
+                            # Test backend connectivity
+                            echo "Testing backend connectivity..."
+                            sleep 5
+                            curl -f http://localhost:8080/swagger/index.html || echo "Swagger not accessible"
+                            curl -f http://localhost:8080/api/Agency || echo "API not accessible"
+                            
+                            # Show container logs (last 10 lines)
                             echo "Backend logs:"
-                            docker logs --tail 5 agent-backend
+                            docker logs --tail 10 agent-backend
                             echo "Frontend logs:"
                             docker logs --tail 5 agent-frontend
                             

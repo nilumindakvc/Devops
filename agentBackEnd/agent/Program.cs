@@ -67,7 +67,8 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// app.UseHttpsRedirection(); // Commented out for HTTP-only deployment
+// Comment out HTTPS redirection for HTTP-only deployment
+// app.UseHttpsRedirection(); 
 app.UseStaticFiles();
 
 app.UseCors();
