@@ -267,14 +267,13 @@ pipeline {
                             docker pull ${BACKEND_IMAGE}:latest
                             docker pull ${FRONTEND_IMAGE}:latest
                             
-                            # Run backend container - maps container ports 8080,8443 to host ports 8080,8443
+                            # Run backend container - maps container port 8080 to host port 8080
                             echo "Starting backend container..."
                             docker run -d \\
                                 --name agent-backend \\
                                 -p 8080:8080 \\
-                                -p 8443:8443 \\
                                 -e ASPNETCORE_ENVIRONMENT=Production \\
-                                -e "ASPNETCORE_URLS=http://+:8080;https://+:8443" \\
+                                -e "ASPNETCORE_URLS=http://+:8080" \\
                                 --restart unless-stopped \\
                                 ${BACKEND_IMAGE}:latest
                             
@@ -302,7 +301,6 @@ pipeline {
                             echo "Application deployed successfully!"
                             echo "Frontend: http://$EC2_IP:3000"
                             echo "Backend API: http://$EC2_IP:8080"
-                            echo "Backend HTTPS: https://$EC2_IP:8443"
 ENDSSH
                     '''
                 }
