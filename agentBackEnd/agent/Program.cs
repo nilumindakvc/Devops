@@ -8,6 +8,12 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure Kestrel to listen on all interfaces
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(8080); // Listen on all IPs port 8080
+});
+
 //builder.Services.AddDbContext<agentDbContextSqlServer>(option =>
 //    option.UseSqlServer(builder.Configuration["SQLSERVER_DOCKER_CONNECTION_STRING"])
 //);
@@ -58,8 +64,6 @@ builder.Services.AddControllers()
     .AddJsonOptions(x =>
         x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-builder.Services.AddControllers();
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -84,7 +88,5 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.Run();
 
 app.Run();
