@@ -101,24 +101,19 @@ export default function GlobalJobs({
           )}
         </div>
 
-        <div className="region_caption_global_jobs_1">
-          <h1 className="display-5 text-secondary">search by country</h1>
-        </div>
-
-        <div className="search_container bg-secondary-subtle">
-          <div className="d-flex w-25 ">
+        <div className="search-section mt-5">
+          <h4 className="text-center mb-5">🌍 Search Jobs by Country</h4>
+          <div className="search-box">
             <input
-              className="form-control me-2 rounded-pill"
+              className="form-control search-input"
               type="search"
-              placeholder="Search"
+              placeholder="Enter country name..."
               aria-label="Search"
               value={searchedCountry}
               onChange={(e) => setSearchedCountry(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && filterJobsByCountry()}
             />
-            <button
-              className="btn btn-outline-success"
-              onClick={filterJobsByCountry}
-            >
+            <button className="btn search-btn" onClick={filterJobsByCountry}>
               Search
             </button>
           </div>

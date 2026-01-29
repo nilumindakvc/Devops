@@ -27,17 +27,20 @@ export default function Ratings({
 
   // Validate baseurl
   if (!baseurl) {
-    console.error('Ratings - baseurl is not set! Check environment variables.');
+    console.error("Ratings - baseurl is not set! Check environment variables.");
   }
 
   const getAllAgencyReviews = async () => {
     try {
-      console.log('Ratings - Loading reviews from:', `${baseurl}/api/User/reveiws`);
+      console.log(
+        "Ratings - Loading reviews from:",
+        `${baseurl}/api/User/reveiws`,
+      );
       const result = await axios.get(`${baseurl}/api/User/reveiws`);
       setAgencyReviews(result.data);
-      console.log('Ratings - Reviews loaded:', result.data?.length, 'reviews');
+      console.log("Ratings - Reviews loaded:", result.data?.length, "reviews");
     } catch (err) {
-      console.error('Ratings - Error loading reviews:', err.message);
+      console.error("Ratings - Error loading reviews:", err.message);
       // Don't set empty array here since this is a refresh, not initial load
     }
   };
@@ -82,63 +85,101 @@ export default function Ratings({
                 “Reviews That Build Trust”
               </h1>
             </div>
-            <div className="sub_title_R">
-              <h1 className="display-6 fw-lighter fs-4">
-                Top Agencies of the month
-              </h1>
+            <div className="top-agencies-section">
+              <div className="section-header">
+                <h2 className="section-title">Top Agencies of the Month</h2>
+                <p className="section-subtitle">
+                  Recognized for excellence in service and customer satisfaction
+                </p>
+              </div>
+
+              <div className="podium-container">
+                {agenciesWithLogos && agenciesWithLogos.length >= 3 ? (
+                  <>
+                    <div className="podium-item silver">
+                      <div className="rank-badge silver-badge">2</div>
+                      <div className="agency-card">
+                        <div className="agency-logo">
+                          {agenciesWithLogos[1]?.logo ? (
+                            <img
+                              src={`data:image/jpeg;base64,${agenciesWithLogos[1]?.logo}`}
+                              alt={agenciesWithLogos[1]?.agencyName}
+                            />
+                          ) : (
+                            <div className="no-logo">No Logo</div>
+                          )}
+                        </div>
+                        <h5 className="agency-name">
+                          {agenciesWithLogos[1]?.agencyName || "Loading..."}
+                        </h5>
+                      </div>
+                      <div className="podium-stand silver-stand"></div>
+                    </div>
+
+                    <div className="podium-item gold">
+                      <div className="rank-badge gold-badge">1</div>
+                      <div className="agency-card">
+                        <div className="agency-logo">
+                          {agenciesWithLogos[0]?.logo ? (
+                            <img
+                              src={`data:image/jpeg;base64,${agenciesWithLogos[0]?.logo}`}
+                              alt={agenciesWithLogos[0]?.agencyName}
+                            />
+                          ) : (
+                            <div className="no-logo">No Logo</div>
+                          )}
+                        </div>
+                        <h5 className="agency-name">
+                          {agenciesWithLogos[0]?.agencyName || "Loading..."}
+                        </h5>
+                      </div>
+                      <div className="podium-stand gold-stand"></div>
+                    </div>
+
+                    <div className="podium-item bronze">
+                      <div className="rank-badge bronze-badge">3</div>
+                      <div className="agency-card">
+                        <div className="agency-logo">
+                          {agenciesWithLogos[2]?.logo ? (
+                            <img
+                              src={`data:image/jpeg;base64,${agenciesWithLogos[2]?.logo}`}
+                              alt={agenciesWithLogos[2]?.agencyName}
+                            />
+                          ) : (
+                            <div className="no-logo">No Logo</div>
+                          )}
+                        </div>
+                        <h5 className="agency-name">
+                          {agenciesWithLogos[2]?.agencyName || "Loading..."}
+                        </h5>
+                      </div>
+                      <div className="podium-stand bronze-stand"></div>
+                    </div>
+                  </>
+                ) : (
+                  <div
+                    className="d-flex justify-content-center align-items-center w-100"
+                    style={{ minHeight: "200px" }}
+                  >
+                    <div className="text-center">
+                      <div
+                        className="spinner-border text-primary mb-2"
+                        role="status"
+                      >
+                        <span className="visually-hidden">Loading...</span>
+                      </div>
+                      <p className="text-muted">Loading top agencies...</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
-            <div className="one_two_three_container">
-              {agenciesWithLogos && agenciesWithLogos.length >= 3 ? (
-                <>
-                  <div className="two  common_all">
-                    <TopThreeCard
-                      name={agenciesWithLogos[1]?.agencyName || "loading..."}
-                      logoPic={agenciesWithLogos[1]?.logo}
-                    />
-                    <div className="number common_all display-5 bg-secondary w-100 text-light flex-grow-1">
-                      #2
-                    </div>
-                  </div>
-                  <div className="one  common_all">
-                    <TopThreeCard
-                      name={agenciesWithLogos[0]?.agencyName || "loading..."}
-                      logoPic={agenciesWithLogos[0]?.logo}
-                    />
-                    <div className="number common_all display-5 w-100 bg-dark text-light flex-grow-1">
-                      #1
-                    </div>
-                  </div>
-                  <div className="three common_all">
-                    <TopThreeCard
-                      name={agenciesWithLogos[2]?.agencyName || "loading..."}
-                      logoPic={agenciesWithLogos[2]?.logo}
-                    />
-                    <div className="number common_all bg-warning w-100 display-5 text-light flex-grow-1">
-                      #3
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <div
-                  className="d-flex justify-content-center align-items-center"
-                  style={{ minHeight: "200px" }}
-                >
-                  <div className="text-center">
-                    <div
-                      className="spinner-border text-primary mb-2"
-                      role="status"
-                    >
-                      <span className="visually-hidden">Loading...</span>
-                    </div>
-                    <p className="text-muted">Loading top agencies...</p>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="sub_title_R">
-              <h1 className="display-6 fw-lighter fs-4 ">User Reviews</h1>
+            <div className="section-divider">
+              <h2 className="page-section-title">User Reviews</h2>
+              <p className="page-section-subtitle">
+                See what others are saying about our partner agencies
+              </p>
             </div>
 
             <div className="toplist ">
@@ -150,14 +191,14 @@ export default function Ratings({
               />
             </div>
 
-            <div className="sub_title_R">
-              <h1 className="display-3 fw-lighter ">Write a Review</h1>
-              <h1 className="display-3 fw-lighter fs-4">
+            <div className="section-divider write-review-header">
+              <h2 className="page-section-title">Write a Review</h2>
+              <p className="page-section-subtitle">
                 Have you worked with an agency recently?
-              </h1>
-              <h1 className="display-3 fw-lighter fs-4">
+              </p>
+              <p className="page-section-subtitle">
                 Help others stay safe and informed
-              </h1>
+              </p>
             </div>
 
             <div className="writing_review_section">

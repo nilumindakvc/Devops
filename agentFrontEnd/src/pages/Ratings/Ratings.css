@@ -3,19 +3,32 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    padding: 0 20px;
 }
 .main_title_R{
     width: 100%;
     height: auto;
     padding-top: 50px;
     padding-left: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.main_title_R h1 {
+    font-weight: 300;
+    color: #2d3436;
 }
 .sub_title_R{
     width: 100%;
+    max-width: 1200px;
     height: auto;
-    padding-left: 50px;
+    padding: 30px 0;
+    text-align: center;
+}
+.sub_title_R h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 8px;
 }
 .one_two_three_container{
     width: 95%;
@@ -26,6 +39,340 @@
     margin-bottom: 40px;
     
 }
+
+/* Enhanced Top Agencies Section */
+.top-agencies-section {
+    width: 95%;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #6c757d;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.podium-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    min-height: 450px;
+}
+
+.podium-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.rank-badge {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: -20px;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.gold-badge {
+    background: linear-gradient(135deg, #ffd700, #ffb700);
+}
+
+.silver-badge {
+    background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+}
+
+.bronze-badge {
+    background: linear-gradient(135deg, #cd7f32, #b87333);
+}
+
+.agency-card {
+    background: white;
+    border-radius: 20px;
+    padding: 45px 35px 30px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid #eee;
+    position: relative;
+    z-index: 5;
+    min-width: 240px;
+    transition: transform 0.3s ease;
+}
+
+.podium-item:hover .agency-card {
+    transform: translateY(-10px);
+}
+
+.agency-logo {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #eee;
+}
+
+.agency-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.agency-logo .no-logo {
+    color: #adb5bd;
+    font-size: 0.85rem;
+}
+
+.agency-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin: 0;
+}
+
+.podium-stand {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-top: -12px;
+}
+
+.gold-stand {
+    height: 130px;
+    background: linear-gradient(180deg, #ffd700 0%, #e6c200 100%);
+}
+
+.silver-stand {
+    height: 95px;
+    background: linear-gradient(180deg, #c0c0c0 0%, #a8a8a8 100%);
+}
+
+.bronze-stand {
+    height: 65px;
+    background: linear-gradient(180deg, #cd7f32 0%, #b87333 100%);
+}
+
+.gold .agency-card {
+    border-color: #ffd700;
+}
+
+.silver .agency-card {
+    border-color: #c0c0c0;
+}
+
+.bronze .agency-card {
+    border-color: #cd7f32;
+}
+
+/* Modern Accordion Styles */
+.modern-accordion {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.modern-accordion-item {
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px !important;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.modern-accordion-item .accordion-button {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 18px 24px;
+    font-weight: 500;
+}
+
+.modern-accordion-item .accordion-button:not(.collapsed) {
+    background-color: #f0f4f8;
+    box-shadow: none;
+}
+
+.modern-accordion-item .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.agency-accordion-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.agency-accordion-stars {
+    font-size: 0.9rem;
+}
+
+.review-count-badge {
+    background-color: #e9ecef;
+    color: #6c757d;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.modern-accordion-body {
+    background-color: #fafbfc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Modern Review Card */
+.review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.review-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.review-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.review-user-name {
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 0.95rem;
+}
+
+.review-service-no {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.review-text {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.review-delete-btn {
+    background: none;
+    border: none;
+    color: #adb5bd;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.review-delete-btn:hover {
+    background-color: #fee2e2;
+    color: #dc3545;
+}
+
+.no-reviews {
+    text-align: center;
+    padding: 30px;
+    color: #6c757d;
+}
+
+.no-reviews p {
+    margin: 0;
+}
+
+/* Page Section Headings */
+.section-divider {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 40px 20px 20px;
+    margin: 0 auto;
+}
+
+.page-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.page-section-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.write-review-header {
+    margin-top: 40px;
+}
+
+.toplist {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .two{
     width: 22%;
     height: 85%;
@@ -95,11 +442,10 @@
 }
 
 .writing_review_section{
-   width: 95%;
+   width: 60%;
    height: auto;
    margin-top: 50px;
    margin-bottom: 50px;
-
-   margin-left: 50px;
- 
+   margin-left: auto;
+   margin-right: auto;
 }

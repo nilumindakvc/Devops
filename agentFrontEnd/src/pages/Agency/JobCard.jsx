@@ -16,32 +16,40 @@ export default function JobCard(props) {
   };
 
   return (
-    <div class="card mb-3 w-100 " idx={props.index} ref={props.ref}>
-      <div class="row g-0">
-        <div class="col-md-4 d-flex flex-column align-items-center justify-content-center ">
+    <div
+      className="card mb-3 w-100 job-card-modern"
+      idx={props.index}
+      ref={props.ref}
+    >
+      <div className="row g-0">
+        <div className="col-md-3 d-flex flex-column align-items-center justify-content-center job-card-image-section">
           <img
             src={categoryImages[props.category]}
             className="img-fluid rounded"
-            style={{ maxWidth: "60px", height: "auto" }}
+            style={{ maxWidth: "70px", height: "auto" }}
             alt="..."
           />
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{props.jobTitle}</h5>
-            <p class="card-text">{props.description}</p>
-            <p class="card-text">
-              <small class="text-body-secondary">{props.country}</small>
+        <div className="col-md-9">
+          <div className="card-body">
+            <h5 className="card-title job-card-title">{props.jobTitle}</h5>
+            <p className="card-text job-card-description">
+              {props.description}
             </p>
-            <p class="card-text">
-              <small class="text-body-secondary">{props.salary}</small>
-            </p>
-            <p class="card-text">
-              <small class="text-body-secondary">{props.requirements}</small>
-            </p>
-            <p class="card-text">
-              <small class="text-body-secondary">{props.deadline}</small>
-            </p>
+            <div className="job-card-details">
+              <span className="job-detail-item">
+                <span className="job-detail-icon">📍</span> {props.country}
+              </span>
+              <span className="job-detail-item">
+                <span className="job-detail-icon">💰</span> {props.salary}
+              </span>
+              <span className="job-detail-item">
+                <span className="job-detail-icon">📋</span> {props.requirements}
+              </span>
+              <span className="job-detail-item deadline">
+                <span className="job-detail-icon">📅</span> {props.deadline}
+              </span>
+            </div>
           </div>
         </div>
       </div>
