@@ -32,17 +32,26 @@ builder.Services.AddScoped<IJobCategory, JobCategoryRepository>();
 
 builder.Services.AddCors(options =>
 {
-    //default policy
+    //default policy - allow all origins for development
     options.AddDefaultPolicy(
         policy =>
         {
             //allow any origin,method and header
             policy.AllowAnyOrigin()
                   .AllowAnyMethod()
-                  .AllowAnyHeader();
+                  .AllowAnyHeader()
+                  .SetIsOriginAllowed(_ => true); // Allow all origins explicitly
         }
-
     );
+
+    // Named policy for extra flexibility
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
 });
 
 builder.Services.AddControllers()
@@ -75,5 +84,7 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Run();
 
 app.Run();
