@@ -4,44 +4,48 @@ import { useState } from "react";
 import axios from "axios";
 import { baseurl } from "../../config";
 
+export default function SignIn({
+  set_common_signIn_signUp_state,
+  setUserLogedIn,
+}) {
+  const navigate = useNavigate();
+  const [loginErrorMessage, setLoginErrorMessage] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-export default function SignIn({set_common_signIn_signUp_state,setUserLogedIn}) {
-    const navigate =useNavigate();
-    const [loginErrorMessage,setLoginErrorMessage]=useState(false);
+  const [loginUser, setLoginUser] = useState({
+    email: "",
+    password: "",
+  });
 
-
-    const [loginUser,setLoginUser] =useState({
-      email:"",
-      password:""
-    });
-
-    const handleLogin=async(e)=>{
-      e.preventDefault();
-      try{
-        const response =await axios.post(`${baseurl}/api/User/login`,loginUser);
-        if(response.data){
-          set_common_signIn_signUp_state(0);
-          console.log(response.data)
-          setUserLogedIn(response.data);
-          localStorage.setItem("user",JSON.stringify(response.data));
-          navigate("/Home");
-          
-        }
-        if(!response.data){
-          setLoginErrorMessage(true);
-        }
-      }catch(err){
-        console.log(err);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setLoginErrorMessage(false);
+    try {
+      const response = await axios.post(`${baseurl}/api/User/login`, loginUser);
+      if (response.data) {
+        set_common_signIn_signUp_state(0);
+        console.log(response.data);
+        setUserLogedIn(response.data);
+        localStorage.setItem("user", JSON.stringify(response.data));
+        navigate("/Home");
       }
-        
+      if (!response.data) {
+        setLoginErrorMessage(true);
+        setIsLoading(false);
+      }
+    } catch (err) {
+      console.log(err);
+      setIsLoading(false);
     }
+  };
 
-    console.log(baseurl)
+  console.log(baseurl);
   return (
     <form id="signIn_form_id">
       <div class="mb-3">
         <p className="display-5 mb-4">SignIn</p>
-        <label for="exampleInputEmail1" class="form-label" >
+        <label for="exampleInputEmail1" class="form-label">
           Email address
         </label>
         <input
@@ -50,7 +54,9 @@ export default function SignIn({set_common_signIn_signUp_state,setUserLogedIn}) 
           id="email"
           aria-describedby="emailHelp"
           value={loginUser.email}
-          onChange={(e)=>setLoginUser({...loginUser,email:e.target.value})}
+          onChange={(e) =>
+            setLoginUser({ ...loginUser, email: e.target.value })
+          }
         />
       </div>
       <div class="mb-3">
@@ -62,18 +68,36 @@ export default function SignIn({set_common_signIn_signUp_state,setUserLogedIn}) 
           class="form-control"
           id="password"
           value={loginUser.password}
-          onChange={(e)=>setLoginUser({...loginUser,password:e.target.value})}
+          onChange={(e) =>
+            setLoginUser({ ...loginUser, password: e.target.value })
+          }
         />
       </div>
-       <div class="mb-3">
+      <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label text-danger">
           {loginErrorMessage && "invalid credentials"}
         </label>
       </div>
       <div className="d-flex justify-content-center ">
-        <button type="submit" class="btn btn-primary ps-5 pe-5 mt-2" id="signIn_button"
-         onClick={(e)=>handleLogin(e)} >
-          Sign In
+        <button
+          type="submit"
+          class="btn btn-primary ps-5 pe-5 mt-2"
+          id="signIn_button"
+          onClick={(e) => handleLogin(e)}
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <>
+              <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Signing In...
+            </>
+          ) : (
+            "Sign In"
+          )}
         </button>
       </div>
     </form>
