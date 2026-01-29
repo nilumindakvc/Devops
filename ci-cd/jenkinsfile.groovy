@@ -274,7 +274,7 @@ pipeline {
                                 -p 8080:8080 \\
                                 -p 8443:8443 \\
                                 -e ASPNETCORE_ENVIRONMENT=Production \\
-                                -e ASPNETCORE_URLS=http://+:8080;https://+:8443 \\
+                                -e "ASPNETCORE_URLS=http://+:8080;https://+:8443" \\
                                 --restart unless-stopped \\
                                 ${BACKEND_IMAGE}:latest
                             
