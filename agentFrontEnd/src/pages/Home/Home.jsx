@@ -23,7 +23,7 @@ export default function Home({ isEverythingReady }) {
 
             <div className="hero_section_para fs-5">
               <p className="display-5 text-warning fw-lighter">
-                Looking for overseas job opportunities or not{" "}
+                Looking for overseas job opportunities or charuka{" "}
                 <span className="text-danger">overwhelming?</span>
               </p>
               <p className="fw-lighter">
