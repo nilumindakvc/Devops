@@ -40,7 +40,6 @@ resource "local_file" "private_key" {
   depends_on = [tls_private_key.devops_key]
 }
 
-# Variables
 variable "aws_region" {
   description = "AWS region"
   type        = string
@@ -140,6 +139,7 @@ resource "aws_subnet" "public" {
   tags = {
     Name    = "${var.project_name}-public-subnet"
     Project = var.project_name
+terraform {
   }
 }
 

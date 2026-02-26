@@ -66,22 +66,6 @@
       register: docker_compose_version
       changed_when: false
 
-    - name: Display installation summary
-      debug:
-        msg: |
-          ===============================================
-          Docker Installation Complete!
-          ===============================================
-
-          Docker Version: {{ docker_version.stdout }}
-          Docker Compose Version: {{ docker_compose_version.stdout }}
-
-          Docker service is running and enabled
-          Ubuntu user added to docker group
-
-          Ready for containerized applications!
-          ===============================================
-
     - name: Configure firewall (UFW)
       block:
         - name: Install UFW
@@ -122,27 +106,3 @@
             state: enabled
             policy: deny
             direction: incoming
-
-    - name: Display configuration summary
-      debug:
-        msg: |
-          ===============================================
-          EC2 Instance Configuration Complete!
-          ===============================================
-
-          Installed Software:
-          - Docker CE
-          - Docker Compose
-          - UFW Firewall
-
-          Open Ports:
-          - 22 (SSH)
-          - 80 (HTTP)
-          - 443 (HTTPS)
-          - 3000 (Frontend Container)
-          - 8080 (Backend HTTP)
-          - 8443 (Backend HTTPS)
-
-          Ready to pull and run Docker containers!
-
-          ===============================================
